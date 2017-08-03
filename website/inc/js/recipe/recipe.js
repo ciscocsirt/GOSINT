@@ -275,6 +275,15 @@ $(document).on("click", "#createRecipe", function(){
             t.destroy();
           }
 
+          // Attempt to load current recipes
+          $.ajax({
+                type: 'GET',
+                url: BASEURL + "/orka/",
+                success: function( data) {
+                    getRecipes(data);
+                },
+                error: AJAXerrorHandler
+          });
           // Get list of recipes and reset recipe form
           getRecipes();
           generate("success", "Recipe successfully added.");

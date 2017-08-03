@@ -25,7 +25,7 @@
             <a href="recipe.php">Recipe Manager</a>
         </li>
         <li>
-            <a href="metrics.php">Metrics</a>
+            <a href="metrics.php">Indicator Metrics</a>
         </li>
         <li>
             <a href="settings.php">Settings</a>

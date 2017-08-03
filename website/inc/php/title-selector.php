@@ -35,7 +35,7 @@
         }
 
         else if (contains('metrics.php', $page)) {
-          $title = 'Metrics';
+          $title = 'Indicator Metrics';
         }
 
         else if (contains('settings.php', $page)) {
