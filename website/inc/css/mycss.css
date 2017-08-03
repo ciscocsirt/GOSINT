@@ -1,0 +1,542 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    position: relative;
+    font-weight: 300;
+}
+
+/* Thanks Alessio Ateni for the cool CSS3 animations!
+ * http://www.alessioatzeni.com/blog/css3-loading-animation-loop/
+ */
+
+
+.circle0 {
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(0,183,229,0.9);
+    opacity: .9;
+    border-right: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    box-shadow: 0 0 35px #2187e7;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    -moz-animation: spinPulse 0.75s infinite ease-in-out;
+    -webkit-animation: spinPulse 0.75s infinite linear;
+}
+
+.circle1 {
+
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(0,183,229,0.9);
+    opacity: .9;
+    border-left: 5px solid rgba(0,0,0,0);
+    border-right: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    box-shadow: 0 0 15px #2187e7;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+    top: -40px;
+    -moz-animation: spinoffPulse 0.5s infinite linear;
+    -webkit-animation: spinoffPulse 0.5s infinite linear;
+}
+
+@-moz-keyframes spinPulse {
+    0% {
+        -moz-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #2187e7;
+    }
+
+    50% {
+        -moz-transform: rotate(145deg);
+        opacity: 1;
+    }
+
+    100% {
+        -moz-transform: rotate(-320deg);
+        opacity: 0;
+    };
+}
+
+@-moz-keyframes spinoffPulse {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    };
+}
+
+@-webkit-keyframes spinPulse {
+    0% {
+        -webkit-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #2187e7;
+    }
+
+    50% {
+        -webkit-transform: rotate(145deg);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: rotate(-320deg);
+        opacity: 0;
+    };
+}
+
+@-webkit-keyframes spinoffPulse {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    };
+}
+
+.chart {
+    background-color: #ffffff;
+    /*border: 1px solid gray;*/
+    font: 10px sans-serif;
+    height: 400px;
+    text-shadow: none;
+    width: 650px;
+    margin-left: auto;
+    margin-right:auto;
+}
+.chart .total{
+    font-size: 18px;
+    font-weight: bold;
+}
+.chart .units{
+    fill: gray;
+    font-size: 12px;
+}
+.chart .label{
+    fill: #CCC;
+    font-size: 12px;
+    font-weight: bold;
+}
+.chart .value{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.toolTip {
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    background: none repeat scroll 0 0 white;
+    border: 0 none;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: -3px 3px 15px #888888;
+    color: black;
+    font: 12px sans-serif;
+    padding: 5px;
+    text-align: center;
+}
+
+.slice text {
+    font-size: 16pt;
+    font-family: Arial;
+}
+.chart-container {
+    min-height: 300px;
+    margin: 0;
+    padding: 0;
+}
+#tooltip {
+    display: none;
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #555;
+    width: 200px;
+    height: 100px;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.keyname {
+    font-weight: bold;
+}
+
+.callet, .callop, .callvt, .calltc, .deleteind, .postind {
+  margin-bottom: 3px;
+  display: block;
+}
+
+#adHocForm #url, #adHocForm #context {
+  width: 50%;
+}
+
+table td {
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
+
+.my-input-class {
+    padding: 3px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.my-confirm-class {
+    padding: 3px 6px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    background-color: #337ab7;
+    text-decoration: none;
+}
+
+.my-cancel-class {
+    padding: 3px 6px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    background-color: #a94442;
+    text-decoration: none;
+}
+
+.error {
+    border: solid 1px;
+    border-color: #a94442;
+}
+
+.recipecontainer {
+    float: left;
+    max-height: 600px;
+    overflow-y: auto;
+    width: 95%;
+    margin-right: 2%;
+    padding: 10px;
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: opacity 0.4s ease-in-out;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    box-sizing: border-box;
+}
+
+div.source {
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color: #993300;
+    color: white;
+}
+
+div.operator {
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color:  #5b7a5b;
+    color: white;
+}
+
+div.destination {
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color: #003366;
+    color: white;
+}
+
+.recipeheader {
+    text-align: center;
+}
+
+.recipetitle {
+    /* font-weight: bold; */
+
+}
+
+.recipesources, #newrecipesource {
+    color: #993300;
+    font-weight: bold;
+}
+
+.recipeoperators, #newrecipeoperators {
+    color: #5b7a5b;
+    font-weight: bold;
+}
+
+.recipedestinations, #newrecipedestination {
+    color: #003366;
+    font-weight: bold;
+}
+#resetRecipe {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2.5%;
+}
+.rowhighlight {
+    background-color: #B0BED9 !important;
+}
+#bulkMovePost, #bulkDelete, #bulkSelect {
+    float: right;
+}
+
+#bulkMovePost, #bulkDelete {
+    margin-top: 5px;
+}
+.ui-tooltip {
+    white-space: pre-line;
+}
+#cronTimeOptions {
+    display: none;
+}
+
+.emphasis {
+    font-weight: 600;
+    font-style: italic;
+}
+.chart-container svg {
+    overflow: visible !important;
+}
+#APInotices {
+    display: none;
+}
+.nav-tabs li {
+    font-size: 16px;
+}
+
+#perTimeChart {
+  margin: 0;
+  padding: 0;
+  overflow: none;
+  width: 50%;
+}
+
+/********************
+ * TOOLTIP CSS
+ */
+
+.nvtooltip {
+  position: absolute;
+  background-color: rgba(255,255,255,1);
+  padding: 10px;
+  border: 1px solid #ddd;
+
+  font-family: Arial;
+  font-size: 13px;
+
+  transition: opacity 500ms linear;
+  -moz-transition: opacity 500ms linear;
+  -webkit-transition: opacity 500ms linear;
+
+  transition-delay: 500ms
+  -moz-transition-delay: 500ms;
+  -webkit-transition-delay: 500ms;
+
+  -moz-box-shadow: 4px 4px 12px rgba(0,0,0,.5);
+  -webkit-box-shadow: 4px 4px 12px rgba(0,0,0,.5);
+  box-shadow: 4px 4px 12px rgba(0,0,0,.5);
+
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.nvtooltip h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nvtooltip p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nvtooltip span {
+  display: inline-block;
+  margin: 2px 0;
+}
+
+
+
+
+
+/**********
+*  General SVG CSS
+*/
+
+
+text {
+  font: 12px sans-serif;
+}
+
+
+
+/**********
+*  Legend
+*/
+
+.legend .series {
+  cursor: pointer;
+}
+
+.legend circle {
+  stroke-width: 2px;
+}
+
+.legend .disabled circle {
+  fill-opacity: 0;
+}
+
+
+
+/**********
+*  Axes
+*/
+
+.axis path {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .75;
+  shape-rendering: crispEdges;
+}
+
+.axis path.domain {
+  stroke-opacity: .75;
+}
+
+.axis line {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .25;
+  shape-rendering: crispEdges;
+}
+
+.axis line.zero {
+  stroke-opacity: .75;
+}
+
+
+
+/**********
+*  Line chart
+*/
+
+.point-paths path {
+  /*
+  fill: #eee;
+  stroke: #aaa;
+  */
+  stroke-opacity: 0;
+  fill-opacity: 0;
+}
+
+
+.lines path {
+  fill: none;
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+
+  transition: stroke-width 250ms linear;
+  -moz-transition: stroke-width 250ms linear;
+  -webkit-transition: stroke-width 250ms linear;
+
+  transition-delay: 250ms
+  -moz-transition-delay: 250ms;
+  -webkit-transition-delay: 250ms;
+}
+
+.line.hover path {
+  stroke-width: 6px;
+}
+
+.lines .point {
+  transition: stroke-width 250ms linear;
+  -moz-transition: stroke-width 250ms linear;
+  -webkit-transition: stroke-width 250ms linear;
+}
+
+.lines .point.hover {
+  stroke-width: 20px;
+  stroke-opacity: .5;
+}
+
+.uppercaseString {
+  text-transform: capitalize;
+}
+
+.loadingInfo {
+  text-align: center;
+  font-size: 150%;
+  font-weight: 400;
+}
+
+.spinnerLoader {
+  margin: 60px auto;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.cube1, .cube2 {
+  background-color: #383838;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: -17px;
+
+  -webkit-animation: sk-cubemove 1.2s infinite ease-in-out;
+  animation: sk-cubemove 1.2s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+  100% { -webkit-transform: rotate(-360deg) }
+}
+
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  } 50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  } 50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  } 75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  } 100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+.embedTweetContent > .twitter-tweet-rendered {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+twitterwidget .EmbeddedTweet {
+  max-width: 80% !important;
+  /* width: 100% !important; */
+}

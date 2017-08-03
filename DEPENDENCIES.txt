@@ -1,0 +1,125 @@
+    What: mgo
+    Source URL: https://github.com/go-mgo/mgo
+    Copyright: Gustavo Niemeyer
+    License: BSD 2-clause
+    License text: https://github.com/go-mgo/mgo/blob/v2-unstable/LICENSE
+
+    What: cron
+    Source URL: https://github.com/robfig/cron
+    Copyright: Rob Figueiredo
+    License: MIT
+    License text: https://github.com/robfig/cron/blob/v2/LICENSE
+
+    What: Gorilla Mux
+    Source URL: https://github.com/gorilla/mux
+    Copyright: Rodrigo Moraes
+    License: BSD 3-clause
+    License text: https://github.com/gorilla/mux/blob/master/LICENSE
+
+    What: Go Twitter
+    Source URL: https://github.com/dghubble/go-twitter
+    Copyright: Dalton Hubble
+    License: MIT
+    License text: https://github.com/dghubble/go-twitter/blob/master/LICENSE
+
+    What: oauth1
+    Source URL: https://github.com/dghubble/oauth1
+    Copyright: Dalton Hubble
+    License: MIT
+    License text: See https://github.com/dghubble/oauth1/blob/master/LICENSE
+
+    What: xurls
+    Source URL: https://github.com/mvdan/xurls
+    Copyright: Daniel Martí
+    License: BSD 3-clause
+    License text: https://github.com/mvdan/xurls/blob/master/LICENSE
+
+    What: gorequest
+    Source URL: https://github.com/parnurzeal/gorequest
+    Copyright: Theeraphol Wattanavekin
+    License: MIT
+    License text: https://github.com/parnurzeal/gorequest/blob/develop/LICENSE
+
+    What: xid
+    Source URL: https://github.com/rs/xid
+    Copyright: Olivier Poitrey
+    License: MIT
+    License text: https://github.com/rs/xid/blob/master/LICENSE
+
+    What: ipisp
+    Source URL: https://github.com/ammario/ipisp
+    Copyright: Ammar Bandukwala
+    License: MIT
+    License text: https://github.com/ammario/ipisp/blob/master/LICENSE
+
+    What: Bootstrap
+    Source URL: http://startbootstrap.com/
+    Copyright: Blackrock Digital LLC
+    License: MIT
+    License Text: https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE
+
+    What: jQuery
+    Source URL: https://github.com/jquery/jquery
+    Copyright: JS Foundation and other contributors
+    License: MIT
+    License Text: https://github.com/jquery/jquery/blob/master/LICENSE.txt
+
+    What: Bootstrap-Tokenfield
+    Source URL: http://github.com/sliptree/bootstrap-tokenfield
+    Copyright: Sliptree
+    License: MIT
+    License Text: https://github.com/sliptree/bootstrap-tokenfield/blob/master/LICENSE.md
+
+    What: #Animate.css
+    Source URL: https://github.com/daneden/animate.css
+    Copyright: Daniel Eden
+    License: MIT
+    License Text: https://github.com/daneden/animate.css/blob/master/LICENSE
+
+    What: DataTables
+    Source URL: https://datatables.net/
+    Copyright: SpryMedia Ltd.
+    License: MIT
+    License Text: http://datatables.net/license/mit
+
+    What: CellEdit for DataTables
+    Source URL: https://github.com/ejbeaty/CellEdit
+    Copyright: Elliott Beaty
+    License: MIT
+    License Text: http://datatables.net/license/mit
+
+    What: MomentJS
+    Source URL: https://github.com/moment/moment/
+    Copyright: JS Foundation and other contributors
+    License: MIT
+    License Text: https://github.com/moment/moment/blob/develop/LICENSE
+
+    What: jQuery Modal
+    Source URL: http://github.com/kylefox/jquery-modal
+    Copyright: Kyle Fox
+    License: MIT
+    License Text: https://github.com/kylefox/jquery-modal/blob/master/LICENSE
+
+    What: SpinKit
+    Source URL: http://github.com/tobiasahlin/SpinKit
+    Copyright: Tobias Ahlin
+    License: MIT
+    License Text: https://github.com/tobiasahlin/SpinKit/blob/master/LICENSE
+
+    What: d3pie
+    Source URL: https://github.com/benkeen/d3pie
+    Copyright: Benjamin Keen
+    License: MIT
+    License Text: https://github.com/benkeen/d3pie/blob/master/LICENSE
+
+    What: FileSaver.js
+    Source URL: https://github.com/eligrey/FileSaver.js/
+    Copyright: Eli Grey
+    License: MIT
+    License Text: https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
+
+    What: Dragula
+    Source URL: https://github.com/bevacqua/dragula
+    Copyright: Nicolas Bevacqua
+    License: MIT
+    License Text: https://github.com/bevacqua/dragula/blob/master/license

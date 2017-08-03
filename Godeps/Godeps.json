@@ -1,0 +1,109 @@
+{
+	"ImportPath": "gosint",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/ammario/ipisp",
+			"Rev": "c3859dc60982dfc70622c3ebc4ca626f810ec1cd"
+		},
+		{
+			"ImportPath": "github.com/cenkalti/backoff",
+			"Comment": "v1.0.0-14-g8edc80b",
+			"Rev": "8edc80b07f38c27352fb186d971c628a6c32552b"
+		},
+		{
+			"ImportPath": "github.com/dghubble/go-twitter/twitter",
+			"Rev": "536f41ba9ebcee721411517767a6f56b54b4ab65"
+		},
+		{
+			"ImportPath": "github.com/dghubble/oauth1",
+			"Comment": "v0.4.0-2-gd9f4856",
+			"Rev": "d9f485600d309576dfa9764424f537e1f254d9a1"
+		},
+		{
+			"ImportPath": "github.com/dghubble/sling",
+			"Comment": "v1.0-23-g52e88a7",
+			"Rev": "52e88a7b75a5db3b49f8911f16d49d9b7b67adc5"
+		},
+		{
+			"ImportPath": "github.com/google/go-querystring/query",
+			"Rev": "9235644dd9e52eeae6fa48efd539fdc351a0af53"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Comment": "v1.1-7-g08b5f42",
+			"Rev": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.1-21-gcf79e51",
+			"Rev": "cf79e51a62d8219d52060dfc1b4e810414ba2d15"
+		},
+		{
+			"ImportPath": "github.com/johngb/langreg",
+			"Rev": "5c6abc6d19d2a39ff139e0b234177b0508d69ea4"
+		},
+		{
+			"ImportPath": "github.com/moul/http2curl",
+			"Rev": "b1479103caacaa39319f75e7f57fc545287fca0d"
+		},
+		{
+			"ImportPath": "github.com/mvdan/xurls",
+			"Comment": "v0.9.0-6-g5a3dc90",
+			"Rev": "5a3dc90eb5681fc090a854cdb1e4cb4f4f01b278"
+		},
+		{
+			"ImportPath": "github.com/parnurzeal/gorequest",
+			"Comment": "v0.2.13-46-ge213a02",
+			"Rev": "e213a02fb0082d41e66996deeaab5ae96039d913"
+		},
+		{
+			"ImportPath": "github.com/rs/xid",
+			"Rev": "057f3c928c207d1e7e318929eeac93bb46e319e3"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "07b51741c1d6423d4a6abab1c49940ec09cb1aaf"
+		},
+		{
+			"ImportPath": "golang.org/x/net/publicsuffix",
+			"Rev": "07b51741c1d6423d4a6abab1c49940ec09cb1aaf"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/bson",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/internal/json",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/internal/sasl",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/internal/scram",
+			"Comment": "r2016.08.01-5-g3f83fa5",
+			"Rev": "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+		},
+		{
+			"ImportPath": "gopkg.in/robfig/cron.v2",
+			"Comment": "v1-11-gbe2e0b0",
+			"Rev": "be2e0b0deed5a68ffee390b4583a13aff8321535"
+		},
+		{
+			"ImportPath": "github.com/pkg/errors",
+			"Comment": "v0.8.0-5-gc605e28",
+			"Rev": "c605e284fe17294bda444b34710735b29d1a9d90"
+		}
+	]
+}
