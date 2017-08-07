@@ -232,7 +232,7 @@ After configuration, GOSINT is ready for use! Begin by navigating to the Pre-Pro
 
 ----------------
 
-##Use
+## Use
 
 ### Pre-Processing
 
@@ -280,7 +280,9 @@ Once you confirm an indicator is valid and you want to keep it, click the *green
 
 To bulk select indicators, click the *blue button with the bulleted items* for an indicator. Continue clicking this button for other indicators to add to the bulk selection.
 
-On the bottom right of the table, click *Bulk Move to Post-Processing* and *Bulk Delete* to perform the respective bulk options.
+Optionally, utilize the *Select All on Current Page* button on the bottom right of the table to select/deselect all indicators on the current page.
+
+Click *Bulk Move to Post-Processing* and *Bulk Delete* to perform the respective bulk options on the bottom right of the table.
 
 ### Post-Processing
 
