@@ -272,7 +272,7 @@ function deleteIndicator(guid) {
         url: deletethis,
         success: function( data){
             console.log(guid);
-          },
+        },
         error: AJAXerrorHandler
     });
 }

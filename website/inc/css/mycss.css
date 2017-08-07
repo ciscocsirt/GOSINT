@@ -286,7 +286,7 @@ div.destination {
 .rowhighlight {
     background-color: #B0BED9 !important;
 }
-#bulkMovePost, #bulkDelete, #bulkSelect {
+#bulkMovePost, #bulkDelete, #bulkSelect, #selectAll {
     float: right;
 }
 

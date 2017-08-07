@@ -88,6 +88,9 @@
 
         <!-- Buttons for bulk operations begin -->
         <div class="row hidden bulk">
+            <button class="btn btn-primary" id="selectAll">Select All on Current Page</button>
+        </div>
+        <div class="row hidden bulk">
             <button class="btn btn-primary" id="bulkMovePost">Bulk Move to Post-Processing</button>
         </div>
         <div class="row hidden bulk">

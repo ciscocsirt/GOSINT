@@ -284,8 +284,6 @@ $(document).on("click", "#createRecipe", function(){
                 },
                 error: AJAXerrorHandler
           });
-          // Get list of recipes and reset recipe form
-          getRecipes();
           generate("success", "Recipe successfully added.");
           resetRecipe();
       },

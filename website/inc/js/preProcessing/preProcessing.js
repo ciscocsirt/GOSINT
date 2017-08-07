@@ -80,7 +80,6 @@ $(document).ready(function() {
     });
     $( "#analysisModal" ).on('click','.postind', function() {
         postIndicator(currentIndicator, currentRow);
-        console.log(currentIndicator);
         currentIndicator = null;
         currentRow = null;
     });
@@ -217,8 +216,31 @@ $(document).ready(function() {
       currentRow = null;
     });
 
+    // Select all trigger
+    $( "#selectAll" ).click(function() {
+
+      // Select all rows on current page
+      var rows = t.rows({ page: 'current' }).nodes();
+
+      // Get DataTables object for each row, then execute bulkMove for each
+      for (var i = 0; i < rows.length; i++) {
+          currentRow = $(rows[i]).closest('tr');
+          bulkMove(currentRow, selectedRows);
+      }
+
+      // Reset indicator placeholders
+      currentIndicator = null;
+      currentRow = null;
+
+    });
+
     // Bulk Move button post processing trigger
     $( "#bulkMovePost" ).click(function() {
+
+      if (selectedRows.length == 0) {
+          generate("error", "No indicators selected! Select indicators to move to post-processing.");
+          return;
+      }
 
       generate("information", "Moving "+selectedRows.length+" indicators into post-processing.");
 
@@ -243,6 +265,11 @@ $(document).ready(function() {
 
     // Bulk delete trigger
     $( "#bulkDelete" ).click(function() {
+
+      if (selectedRows.length == 0) {
+          generate("error", "No indicators selected! Select indicators to delete.");
+          return;
+      }
 
       generate("information", "Deleting "+selectedRows.length+" indicators.");
 
@@ -1086,10 +1113,6 @@ function callCiscoUmbrella(ind) {
  */
 function editTableCell(updatedCell, updatedRow, oldValue) {
 
-    // updatedCell = htmlEscape(updatedCell);
-    console.log(updatedRow.data());
-    console.log(updatedCell.data());
-
     generate("information", "Updating indicator "+updatedRow.data().indicator+" with new data.");
     $.ajax({
           type: 'PUT',
@@ -1163,9 +1186,6 @@ function postIndicator(indicator, currentRow) {
  */
 function bulkMove(currentRow, selectedRows) {
 
-    console.log(currentRow);
-    console.log(selectedRows);
-
     // Highlight cells in row
     var td = currentRow.children();
     td.toggleClass("rowhighlight");
@@ -1216,7 +1236,6 @@ function updateDisplay(currentDiv, currentTab, indicator) {
         $("#embedTweetTab").show();
         $("#embedTweet").show();
         $('.embedTweetContent').html("<button id='modalEmbedTweet' class='btn btn-info modalbtn'>View Tweet</button>") ;
-        console.log(indicator);
     }
     else {
         $("#embedTweetTab").hide();
