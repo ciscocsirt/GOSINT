@@ -107,6 +107,9 @@ func SendToPost(indicators []RawIndicators) {
 
 // OrkaToCrits is a gadget for the orchestration to be used for sending indicators to CRITs.
 func OrkaToCrits(indicators []RawIndicators) {
+	sessionClone := Sessions.Clone()
+	d := sessionClone.DB("test").C("pre_processing")
+
 	for _, processedindicator := range indicators {
 		// Switch to conform GOSINT indicator types to CRITs indicator types.
 		var indicator_type string
@@ -142,9 +145,6 @@ func OrkaToCrits(indicators []RawIndicators) {
 		if err != nil {
 			log.Println(err)
 		}
-
-		sessionClone := Sessions.Clone()
-		d := sessionClone.DB("test").C("pre_processing")
 
 		_, err2 := d.RemoveAll(bson.M{"guid": processedindicator.Guid})
 		if err2 != nil {
