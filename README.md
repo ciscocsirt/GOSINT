@@ -33,7 +33,7 @@ Create a user for GOSINT to run on with minimal privileges.  This user will run 
 
 ```
 sudo useradd -m gosint
-su gosint
+sudo su gosint
 ```
 
 Install and test the Go environment. Complete the following steps to install Go 1.8:
@@ -81,7 +81,7 @@ go install github.com/tools/godep
 ```
 cd ~/projects/src
 git clone https://github.com/ciscocsirt/GOSINT
-cd gosint
+cd GOSINT
 godep go build -o gosint
 chmod +x gosint
 ```
