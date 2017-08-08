@@ -80,7 +80,7 @@ go install github.com/tools/godep
 
 ```
 cd ~/projects/src
-git clone <INSERT THE GOSINT GITHUB LINK HERE>
+git clone https://github.com/ciscocsirt/GOSINT
 cd gosint
 godep go build -o gosint
 chmod +x gosint
