@@ -91,8 +91,15 @@ chmod +x gosint
 ```
 ./gosint 
 ```
-
 > GOSINT should start and then error out trying to connect to the database if MongoDB has not yet been installed.
+
+- Prepare the website
+
+```
+exit
+sudo mkdir /var/www/gosint
+cp -r /home/gosint/projects/src/GOSINT/website/* /var/www/gosint/
+```
 
 Install MongoDB and ensure it is ONLY listening on your local loopback interface (127.0.0.1/localhost) if you are running it on the same host as GOSINT. Allowing your database to listen on any externally facing ports is a security risk, and should not be done without proper precautions taken to prevent unauthorized access.  
 
@@ -110,7 +117,7 @@ server {
     ssl_certificate_key /etc/nginx/ssl/nginx.key;
     listen 443 ssl;
 
-    root /var/wwwroot;
+    root /var/www/gosint;
     index index.php index.html index.htm;
     try_files $uri $uri/ @apachesite;
 
