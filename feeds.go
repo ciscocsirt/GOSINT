@@ -486,13 +486,18 @@ Loop:
 			Set("X-OTX-API-KEY", Config.AlienvaultKey).
 			End()
 
+		// Stop attempting to crawl if we receive anything other than HTTP 200 status code.
 		if resp.StatusCode != 200 {
 			break Loop
 		}
 
-
 		if err := json.Unmarshal([]byte(body), &pulses); err != nil {
 			log.Println(err)
+		}
+
+		// Check to see if crawling past the last results.
+		if len(pulses.Results) == 0 {
+			break Loop
 		}
 
 		// Iterate through pulses in API response and process them.
