@@ -448,7 +448,7 @@ func StartAlienvault() {
 // AlienvaultFeedCron is a function to setup the frequency in which the Alienvault API is crawled for new indicators.
 func AlienvaultFeedCron() {
 	c := cron.New()
-	c.AddFunc("@every 10m", func() { GetAlienvault() })
+	c.AddFunc("@daily", func() { GetAlienvault() })
 	c.Start()
 	log.Println("Alienvault feed started.")
 
@@ -482,9 +482,14 @@ Loop:
 
 		// Call the Alienvault OTX API.
 		request := gorequest.New()
-		_, body, _ := request.Get(url).
+		resp, body, _ := request.Get(url).
 			Set("X-OTX-API-KEY", Config.AlienvaultKey).
 			End()
+
+		if resp.StatusCode != 200 {
+			break Loop
+		}
+
 
 		if err := json.Unmarshal([]byte(body), &pulses); err != nil {
 			log.Println(err)
