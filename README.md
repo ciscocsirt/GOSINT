@@ -168,6 +168,16 @@ If GOSINT starts up without any errors, and you have NGINX setup properly, you s
 
 ----------------
 
+## Updating
+
+Updating is simple and encouraged as bugs are reported and fixed or new features are added.  To update your instance of GOSINT, pull the latest version of GOSINT from the repository and re-run the build command to compile the updated binary.
+
+```
+godep go build -o gosint
+```
+
+----------------
+
 ## Configuration
 
 GOSINT needs some quick initial configuration to start making use of the framework features.  All the settings you will need to specify can be found under the "Settings" tab.  
