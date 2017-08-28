@@ -75,19 +75,19 @@ func GetCSVResource(feed Source) {
 				log.Printf("Found IP %v in %v.\n", indicator, feed.Name)
 				var empty []string
 				m := RawIndicators{ids, rfc, indicator, "ip", feed.Name, record[contextcolumn], empty, empty}
-				go InsertRaw(m)
+				InsertionQueue <- m
 			case "url":
 				log.Printf("Found URL %v in %v.\n", indicator, feed.Name)
 				// Creates RawIndicators struct and inserts in the DB.
 				var empty []string
 				m := RawIndicators{ids, rfc, indicator, "url", feed.Name, record[contextcolumn], empty, empty}
-				go InsertRaw(m)
+				InsertionQueue <- m
 			case "domain":
 				log.Printf("Found Domain %v in %v.\n", indicator, feed.Name)
 				// Creates RawIndicators struct and inserts in the DB.
 				var empty []string
 				m := RawIndicators{ids, rfc, indicator, "domain", feed.Name, record[contextcolumn], empty, empty}
-				go InsertRaw(m)
+				InsertionQueue <- m
 			}
 		}
 	}
@@ -145,19 +145,19 @@ func smartParse(url string, name string) {
 			log.Printf("Found IP %v in %v.\n", indicator, url)
 			var empty []string
 			m := RawIndicators{ids, rfc, indicator, "ip", name, url, empty, empty}
-			go InsertRaw(m)
+			InsertionQueue <- m
 		case "url":
 			log.Printf("Found URL %v in %v.\n", indicator, url)
 			// Creates RawIndicators struct and inserts in the DB.
 			var empty []string
 			m := RawIndicators{ids, rfc, indicator, "url", name, url, empty, empty}
-			go InsertRaw(m)
+			InsertionQueue <- m
 		case "domain":
 			log.Printf("Found Domain %v in %v.\n", indicator, url)
 			// Creates RawIndicators struct and inserts in the DB.
 			var empty []string
 			m := RawIndicators{ids, rfc, indicator, "domain", name, url, empty, empty}
-			go InsertRaw(m)
+			InsertionQueue <- m
 		}
 	}
 
@@ -204,7 +204,7 @@ func smartParse(url string, name string) {
 			var empty []string
 
 			m := RawIndicators{ids, rfc, hash.sum, hash.hashtype, name, url, empty, empty}
-			go InsertRaw(m)
+			InsertionQueue <- m
 		}
 	}
 }
@@ -301,17 +301,17 @@ func TwitterParser() {
 			case "ip":
 				log.Printf("Found IP %v in tweet by %v.\n", indicator, tweet.User.ScreenName)
 				m := RawIndicators{ids, rfc, indicator, "ip", "twitter", context, empty, empty}
-				InsertRaw(m)
+				InsertionQueue <- m
 			case "url":
 				log.Printf("Found URL %v in tweet by %v.\n", indicator, tweet.User.ScreenName)
 				// Creates RawIndicators struct and inserts in the DB.
 				m := RawIndicators{ids, rfc, indicator, "url", "twitter", context, empty, empty}
-				InsertRaw(m)
+				InsertionQueue <- m
 			case "domain":
 				log.Printf("Found Domain %v in tweet by %v.\n", indicator, tweet.User.ScreenName)
 				// Creates RawIndicators struct and inserts in the DB.
 				m := RawIndicators{ids, rfc, indicator, "domain", "twitter", context, empty, empty}
-				InsertRaw(m)
+				InsertionQueue <- m
 			}
 		}
 	}
@@ -414,17 +414,17 @@ func ParseIndicators(message string, url string) {
 		case "ip":
 			log.Printf("Found IP %v in %v.\n", indicator, url)
 			m := RawIndicators{ids, rfc, indicator, "ip", "virustotal", url, tags, empty}
-			go InsertRaw(m)
+			InsertionQueue <- m
 		case "url":
 			log.Printf("Found URL %v in %v.\n", indicator, url)
 			// Creates RawIndicators struct and inserts in the DB.
 			m := RawIndicators{ids, rfc, indicator, "url", "virustotal", url, tags, empty}
-			go InsertRaw(m)
+			InsertionQueue <- m
 		case "domain":
 			log.Printf("Found Domain %v in %v.\n", indicator, url)
 			// Creates RawIndicators struct and inserts in the DB.
 			m := RawIndicators{ids, rfc, indicator, "domain", "virustotal", url, tags, empty}
-			go InsertRaw(m)
+			InsertionQueue <- m
 		}
 	}
 }
@@ -544,7 +544,7 @@ Loop:
 				}
 
 				m := RawIndicators{ids, rfc, indicator.Indicator, indicatortype, "alienvaultotx", context, empty, empty}
-				go InsertRaw(m)
+				InsertionQueue <- m
 			}
 			// Add pulse ID to list of seen ones.
 			otxseen.Seen = append(otxseen.Seen, pulse.ID)

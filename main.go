@@ -23,6 +23,7 @@ var (
 	alienvaultFeed    chan string
 	serve             string
 	metrics           Metrics
+	InsertionQueue    chan RawIndicators
 )
 
 func init() {
@@ -57,6 +58,12 @@ func init() {
 }
 
 func main() {
+	// Make queue for indicator insertion pipeline.
+	InsertionQueue = make(chan RawIndicators, 10000)
+
+	// Start indicator insertion worker.
+	go InsertRaw()
+
 	// Start source parsing.
 	StartFeeds()
 

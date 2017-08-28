@@ -612,17 +612,17 @@ func GoGet(w http.ResponseWriter, r *http.Request) {
 		if matching != "" {
 			log.Printf("Found IP %v in %v.\n", matching, adhoc.Resource)
 			m := RawIndicators{ids, rfc, matching, "ip", "ad-hoc", adhoc.Context+" | "+adhoc.Resource, empty, empty}
-			InsertRaw(m)
+			InsertionQueue <- m
 		} else if strings.Contains(indicator, "/") {
 			log.Printf("Found URL %v in %v.\n", indicator, adhoc.Resource)
 			// Creates RawIndicators struct and inserts in the DB.
 			m := RawIndicators{ids, rfc, indicator, "url", "ad-hoc", adhoc.Context+" | "+adhoc.Resource, empty, empty}
-			InsertRaw(m)
+			InsertionQueue <- m
 		} else {
 			log.Printf("Found Domain %v in %v.\n", indicator, adhoc.Resource)
 			// Creates RawIndicators struct and inserts in the DB.
 			m := RawIndicators{ids, rfc, indicator, "domain", "ad-hoc", adhoc.Context+" | "+adhoc.Resource, empty, empty}
-			InsertRaw(m)
+			InsertionQueue <- m
 		}
 	}
 	m := APIResponse{"success"}
