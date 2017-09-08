@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Use &#8212; gosint 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Configuration" href="configuration.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="use">
+<h1>Use<a class="headerlink" href="#use" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pre-processing">
+<h2>Pre-Processing<a class="headerlink" href="#pre-processing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>The pre-processing page is where indicators are displayed that GOSINT has parsed from various sources, such as Twitter and indicator feeds.</p>
+</div>
+<div class="section" id="searching-sorting-indicators">
+<h3>Searching/Sorting Indicators<a class="headerlink" href="#searching-sorting-indicators" title="Permalink to this headline">¶</a></h3>
+<p>GOSINT allows for searching and sorting the indicators. By default, indicators are sorted with the most recent indicators listed first.</p>
+<p>However, the indicators can be sorted by any field, including type, source, and context. Click on the column title in order to sort the indicators by these fields.</p>
+<p>We can also search for an indicator or for indicators from a specific source or with a specific context by using the search box located on the upper right of the table.</p>
+</div>
+<div class="section" id="editing-indicators">
+<h3>Editing Indicators<a class="headerlink" href="#editing-indicators" title="Permalink to this headline">¶</a></h3>
+<p>If we find that GOSINT has incorrectly parsed an indicator (for example, if GOSINT has not properly defanged an indicator), or if we would like to add additional context with an indicator, we can manually edit the indicator by clicking on any of its fields.</p>
+<p>This opens a text box. Edit the field, and click confirm to save your changes.</p>
+<p>In addition, tags can be inserted on a per-indicator basis. To add a tag to an indicator, select the text box under the tags column, and type the tag you would like to associate. Tags can consist of a single word or a phrase. Enter a comma or hit Enter/Return on your keyboard to finalize adding the tag to the indicator.</p>
+<p>Remove a tag by clicking the <strong>X</strong> on the tag.</p>
+</div>
+<div class="section" id="querying-third-party-apis">
+<h3>Querying Third Party APIs<a class="headerlink" href="#querying-third-party-apis" title="Permalink to this headline">¶</a></h3>
+<p>The pre-processing page is a analysis workspace used to determine whether the pending indicators are malicious or not.</p>
+<p>GOSINT has various third-party tools available for enriching raw indicators with additional context. By default, GOSINT supports Cisco Umbrella, ThreatCrowd, and VirusTotal.</p>
+<p>If these third-party APIs are not properly configured, GOSINT will display a notice advising the user that these APIs should be configured in the Settings page.</p>
+<p>To launch any of these APIs, click the buttons labeled <strong>Umbrella</strong>, <strong>ThreatCrowd</strong>, or <strong>VirusTotal</strong>. Click the <strong>Everything</strong> button to call all available APIs at once.</p>
+<p>When the 3rd party enrichment window is closed, the row containing the indicator becomes <strong>bold</strong> and <em>italicized</em>.</p>
+</div>
+<div class="section" id="deleting-indicators">
+<h3>Deleting Indicators<a class="headerlink" href="#deleting-indicators" title="Permalink to this headline">¶</a></h3>
+<p>To delete an indicator that has been determined to be non-malicious, click the <strong>orange X button</strong> <a class="reference internal" href="_images/x.png"><img alt="x-button" src="_images/x.png" style="width: 25px; height: 25px;" /></a>. This removes the indicator from the pre-processing table.</p>
+<p>Indicators that have been deleted are no longer visible on the pre-processing page again, however they are stored permanently in the backend of GOSINT to prevent their recurrence.</p>
+</div>
+<div class="section" id="moving-to-post-processing">
+<h3>Moving to Post-Processing<a class="headerlink" href="#moving-to-post-processing" title="Permalink to this headline">¶</a></h3>
+<p>Once you confirm an indicator is valid and you want to keep it, click the <strong>green right-direction arrow button</strong> <a class="reference internal" href="_images/arrow.png"><img alt="arrow-button" src="_images/arrow.png" style="width: 25px; height: 25px;" /></a>. The indicator is removed from the pre-processing table, and is added into the post-processing table.</p>
+</div>
+<div class="section" id="bulk-selecting-indicators">
+<h3>Bulk Selecting Indicators<a class="headerlink" href="#bulk-selecting-indicators" title="Permalink to this headline">¶</a></h3>
+<p>To bulk select indicators, click the <strong>blue button with the bulleted items</strong> <a class="reference internal" href="_images/bullet.png"><img alt="bullet-button" src="_images/bullet.png" style="width: 25px; height: 25px;" /></a> for an indicator. Continue clicking this button for other indicators to add to the bulk selection.</p>
+<p>Optionally, utilize the Select All on Current Page button on the bottom right of the table to select/deselect all indicators on the current page.</p>
+<p>Click Bulk Move to Post-Processing and Bulk Delete to perform the respective bulk options on the bottom right of the table.</p>
+</div>
+</div>
+<div class="section" id="post-processing">
+<h2>Post-Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This page is where indicators that have been marked as malicious in pre-processing are loaded.</p>
+</div>
+<div class="section" id="searching-sorting-editing-indicators">
+<h3>Searching/Sorting/Editing Indicators<a class="headerlink" href="#searching-sorting-editing-indicators" title="Permalink to this headline">¶</a></h3>
+<p>As with the pre-processing page, we can search, sort and edit indicators.</p>
+</div>
+<div class="section" id="id2">
+<h3>Deleting Indicators<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>If an indicator was moved into post-processing by mistake, then we can remove the indicator by clicking the <strong>orange X button</strong> <a class="reference internal" href="_images/x.png"><img alt="x-button" src="_images/x.png" style="width: 25px; height: 25px;" /></a> in the appropriate row.</p>
+</div>
+</div>
+<div class="section" id="transfer-station">
+<h2>Transfer Station<a class="headerlink" href="#transfer-station" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Overview<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>This page is where we can select indicators in the post-processing stage for export into various locations.</p>
+<p>Currently, GOSINT supports export into CSV and <a class="reference external" href="https://crits.github.io/">CRITs</a>. Additional export mechanisms are planned for integration into tools.</p>
+<p>To select an indicator for export, simply click the appropriate indicator.</p>
+</div>
+<div class="section" id="exporting-via-csv">
+<h3>Exporting via CSV<a class="headerlink" href="#exporting-via-csv" title="Permalink to this headline">¶</a></h3>
+<p>CRITs is a well-known open-source malware and threat repository. You can download CRITs from <a class="reference external" href="https://crits.github.io/">https://crits.github.io/</a></p>
+<p>We can export indicators from GOSINT into CRITs by selecting CRITs as the export format.</p>
+<p>Ensure the appropriate settings are configured in the CRITs section of the settings page prior to utilizing CRITs export.</p>
+<p>Upon successful export via any mechanism, the indicators that were selected are removed from the post-processing stage.</p>
+</div>
+</div>
+<div class="section" id="ad-hoc-operations">
+<h2>Ad Hoc Operations<a class="headerlink" href="#ad-hoc-operations" title="Permalink to this headline">¶</a></h2>
+<p>GOSINT supports two Ad Hoc Operations.</p>
+<ul class="simple">
+<li><strong>Ad Hoc Input</strong>: Enter any URL or a body of text to be parsed for potential indicators.</li>
+<li><strong>Ad Hoc Investigate</strong>: Enter an indicator and conduct analysis on it, via supported APIs.</li>
+</ul>
+<div class="section" id="ad-hoc-input">
+<h3>Ad Hoc Input<a class="headerlink" href="#ad-hoc-input" title="Permalink to this headline">¶</a></h3>
+<p>Let us say that we have found an external report on a recent strain of malware on the Internet. How can we parse these indicators on an ad-hoc basis and have these indicators added into GOSINT? The ad hoc input page allows indicators to be parsed via URL, or a body of text.</p>
+<p><strong>Input via URL</strong>: Enter a valid URL that contains parseable indicators.</p>
+<p><strong>Input via General Text</strong>: For an external report in PDF or some other format, copy the text from the report into the General Text section for parsing.</p>
+<p><strong>Context</strong>: We can assign a specific context to the report, which will allow for these indicators to be assigned this context in pre-processing. For example, we can place the title of the report in the Context so we know where these indicators came from.</p>
+<p>Click <strong>Submit</strong> to begin parsing the indicators. All indicators will display in the pre-processing stage with the associated context after GOSINT has parsed the indicators.</p>
+</div>
+<div class="section" id="ad-hoc-investigate">
+<h3>Ad Hoc Investigate<a class="headerlink" href="#ad-hoc-investigate" title="Permalink to this headline">¶</a></h3>
+<p>If you have encountered any arbitrary indicator and would like to call the APIs built in for GOSINT, you can use the Ad Hoc Investigate page.</p>
+<p>First, select the <strong>Indicator Type</strong>. You can select either “Smart” to allow GOSINT to auto-detect the type of indicator, or specify the indicator type manually (Domain, IP, etc.)</p>
+<p>Then, enter the <strong>Indicator</strong> you would like to analyze. Finally, select the API you would like to call, and the results will load on the page.</p>
+</div>
+</div>
+<div class="section" id="recipe-manager">
+<h2>Recipe Manager<a class="headerlink" href="#recipe-manager" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Overview<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>The Recipe Manager allows the user to set up tasks for automation with GOSINT. Recipes can be set up to take indicators from certain sources, apply an optional operator to analyze the indicators, and then place these indicators in a destination.</p>
+</div>
+<div class="section" id="creating-a-recipe">
+<h3>Creating a Recipe<a class="headerlink" href="#creating-a-recipe" title="Permalink to this headline">¶</a></h3>
+<p>To create a recipe, drag a maximum of one source and maximum of one destination to the final recipe column on the right. The <strong>Recipe Overview</strong> section displays the recipe to be created.</p>
+<p>Enter a title for the recipe, and click <strong>Create Recipe</strong> to create the recipe. The recipe is displayed in the <strong>Past Recipes</strong> section below the recipe maker.</p>
+<p>Optionally, click <strong>Reset Recipe</strong> to clear out a pending recipe for creation and to start over.</p>
+<p>View and delete past recipes that have been created in the <strong>Past Recipes</strong> section of the Recipe Manager page.</p>
+</div>
+</div>
+<div class="section" id="metrics">
+<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
+<p>The Metrics page displays interesting statistical information about indicators that have been processed with GOSINT.</p>
+<p><strong>Indicators By Source</strong>: This displays a pie chart of the source of all indicators processed with GOSINT.</p>
+<p><strong>Indicators By Type</strong>: This displays a pie chart of the type of all indicators processed with GOSINT.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">gosint</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-processing">Pre-Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-processing">Post-Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transfer-station">Transfer Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ad-hoc-operations">Ad Hoc Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recipe-manager">Recipe Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#metrics">Metrics</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="configuration.html" title="previous chapter">Configuration</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Cisco CSIRT.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/use.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

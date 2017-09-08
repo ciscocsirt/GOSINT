@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to GOSINT’s documentation! &#8212; gosint 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-gosint-s-documentation">
+<h1>Welcome to GOSINT’s documentation!<a class="headerlink" href="#welcome-to-gosint-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>The GOSINT framework is a project used for collecting, processing, and exporting high quality indicators of compromise (IOCs).</p>
+<p>GOSINT allows a security analyst to collect and standardize structured and unstructured threat intelligence.</p>
+<p>Applying threat intelligence to security operations enriches alert data with additional confidence, context, and co-occurrence. This means that you apply research from third parties to security event data to identify similar, or identical, indicators of malicious behavior. The framework is written in Go with a JavaScript frontend.</p>
+<p><a class="reference internal" href="_images/gosint.gif"><img alt="gosint-gif" src="_images/gosint.gif" style="width: 442px; height: 248px;" /></a></p>
+<p>Navigate to a section to begin traversing the documentation.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#warnings">Warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#step-by-step">Step by Step</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#nginx-configuration">NGINX Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#updates">Updates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#twitter">Twitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#threat-intel-apis">Threat Intel APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#id1">CRITs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#whitelists">Whitelists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#indicator-feeds">Indicator Feeds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="use.html#pre-processing">Pre-Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="use.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#searching-sorting-indicators">Searching/Sorting Indicators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#editing-indicators">Editing Indicators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#querying-third-party-apis">Querying Third Party APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#deleting-indicators">Deleting Indicators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#moving-to-post-processing">Moving to Post-Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#bulk-selecting-indicators">Bulk Selecting Indicators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use.html#post-processing">Post-Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="use.html#id1">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#searching-sorting-editing-indicators">Searching/Sorting/Editing Indicators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#id2">Deleting Indicators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use.html#transfer-station">Transfer Station</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="use.html#id3">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#exporting-via-csv">Exporting via CSV</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use.html#ad-hoc-operations">Ad Hoc Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="use.html#ad-hoc-input">Ad Hoc Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#ad-hoc-investigate">Ad Hoc Investigate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use.html#recipe-manager">Recipe Manager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="use.html#id4">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html#creating-a-recipe">Creating a Recipe</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use.html#metrics">Metrics</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">gosint</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">Use</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="installation.html" title="next chapter">Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Cisco CSIRT.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
