@@ -2,10 +2,36 @@ Installation
 =====================
 It is recommended that GOSINT be installed on a GNU/Linux system with the latest version of the Go language available.
 
-The document was prepared specifically for Ubuntu Server 16.04.2 LTS.
+Quick Installation
+------------------
+
+.. _bash-install:
+
+- **Option 1: Bash script install**
+
+  This process will allow GOSINT to be installed via pre-configured install scripts. Note that these scripts were tested on a 64-bit version of 16.04 Ubuntu, and a 32-bit version of 14.04 Ubuntu.
+
+  1. Navigate to ``bash-install`` directory in the repository
+  2. Execute ``sudo bash 1-install.sh`` and enter ``Y`` to all confirmation prompts.
+  3. At the conclusion, the GOSINT binary will be running. If all went well, open your web browser and navigate to http://localhost/ to view the GOSINT dashboard.
+
+.. _docker:
+
+- **Option 2: Docker**
+
+  - A community member has developed a version of GOSINT that runs on Docker as viewable here: https://github.com/Jsitech/DockerFiles/tree/master/gosint
+  - You can pull this from the Docker Hub as: ``docker pull jsitech/gosint``
+  - **Note**: This repository may not have the latest updates of the official repository. To ensure you have the latest code, either use the pre-configured installation bash scripts (as above) or look below for the more manual process.
+
+.. _manual-install:
+
+Manual Installation
+-------------------
+
+The following was prepared specifically for Ubuntu Server 16.04.2 LTS.
 
 Warnings
---------
+^^^^^^^^
 
 - **Package managers may not provide up to date versions of the software and should be tested to ensure compatibility.**
 
@@ -13,10 +39,10 @@ Warnings
 
 - **Package managers may name packages differently depending on the specific package manager or OS release repository.**
 
-  For example, `php-fpm` may not exist; `php7.0-fpm may` be the correct name of the package
+  For example, `php-fpm` may not exist; `php7.0-fpm` may be the correct name of the package
 
-Prerequisites
--------------
+Pre-Requisites
+^^^^^^^^^^^^^^
 
 GOSINT requires
 
@@ -44,7 +70,7 @@ You can use your preferred package manager to install most of these environments
 
 
 Step by Step
-------------
+^^^^^^^^^^^^
 
 1. Create a user for GOSINT to run on with minimal privileges.
 
@@ -111,7 +137,7 @@ NGINX Configuration
   server {
     listen 80;
 
-    root /home/gosint/projects/src/gosint/website;
+    root /home/gosint/projects/src/GOSINT/website;
     index index.php index.html index.htm;
     try_files $uri $uri/ @apachesite;
 
@@ -146,7 +172,12 @@ NGINX Configuration
     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
+
+        # PHP 7
         fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+
+        # PHP 5
+        # fastcgi_pass unix:/run/php5-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
