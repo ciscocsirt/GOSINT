@@ -37,6 +37,6 @@ Please find the configuration procedure at http://gosint.readthedocs.io/en/lates
 
 ----------------
 
-##Use
+## Use
 
 Please find the instructions for use at http://gosint.readthedocs.io/en/latest/use.html
