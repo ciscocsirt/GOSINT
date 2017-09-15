@@ -11,9 +11,9 @@ var saveAs=saveAs||function(e){"use strict";if(typeof e==="undefined"||typeof na
 
 // BASEURL and AJAXerrorHandler function defined in inc/js/general/generate.js
 
-$(document).ready(function (){
+var selectedRows = [];
 
-  var selectedRows = [];
+$(document).ready(function (){
 
     $.ajax({
         type: 'GET',
@@ -49,12 +49,10 @@ $(document).ready(function (){
        }
 
        var td = tr.children();
+       tr.toggleClass("rowhighlight");
        td.toggleClass("rowhighlight");
-       tr.toggleClass("tselected");
 
        addOrRemove(selectedRows, data);
-
-       $('#countSelected').text(selectedRows.length);
    });
 
     // Handle form submission event
@@ -88,7 +86,7 @@ $(document).ready(function (){
         for (var i = 0; i < arr.length; i++) {
             deleteIndicator(arr[i].guid);
         }
-        t.rows('.tselected').remove().draw();
+        t.rows('.rowhighlight').remove().draw();
 
         // Clear out selectedRows variables
         selectedRows.length = 0;
@@ -96,6 +94,24 @@ $(document).ready(function (){
 
         // Prevent actual form submission
         e.preventDefault();
+    });
+
+    // Select all trigger
+    $( "#selectAll" ).click(function() {
+
+      // Select all rows on current page
+      var rows = t.rows({ page: 'current' }).nodes();
+
+      // Get DataTables object for each row, then execute bulkMove for each
+      for (var i = 0; i < rows.length; i++) {
+          currentRow = $(rows[i]).closest('tr');
+          bulkMove(currentRow, selectedRows);
+      }
+
+      // Reset indicator placeholders
+      currentIndicator = null;
+      currentRow = null;
+
     });
 });
 
@@ -270,11 +286,28 @@ function deleteIndicator(guid) {
     $.ajax({
         type: 'DELETE',
         url: deletethis,
-        success: function( data){
-            console.log(guid);
-        },
+        success: function(data) { return; },
         error: AJAXerrorHandler
     });
+}
+
+/*
+ * Function Name:  bulkMove
+ * Pre-Condition:  Bulk Move button clicked via modal or table
+ * Post-Condition: Add indicator to array of selectedRows
+ */
+function bulkMove(currentRow, selectedRows) {
+
+    // Highlight cells in row
+    var td = currentRow.children();
+    td.toggleClass("rowhighlight");
+    currentRow.toggleClass("rowhighlight");
+
+    // Call function to either add indicator if not present, or remove if already
+    // present in selectedRows
+    var data = t.row(currentRow).data();
+    var added = addOrRemove(selectedRows, data);
+
 }
 
 /*
@@ -291,4 +324,6 @@ function addOrRemove(array, value) {
     else {
         array.splice(index, 1);
     }
+
+    $('#countSelected').text(selectedRows.length);
 }

@@ -13,6 +13,9 @@
       <h1>Indicator Metrics</h1>
       <p>View a breakdown of the indicators currently loaded into GOSINT below.</p>
 
+      <!-- Populate emptyNotice div if no indicators loaded -->
+      <div class="alert alert-info hidden" id="emptyNotice"></div>
+
       <p class="loadingInfo">Loading metrics...</p>
 
       <!-- Inner chart div begin -->

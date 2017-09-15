@@ -43,7 +43,7 @@
         }
 
         else if (contains('ad-hoc.php', $page)) {
-          $title = 'Ad Hoc Indicators';
+          $title = 'Ad Hoc Operations';
         }
 
         else if (contains('recipe.php', $page)) {

@@ -19,7 +19,7 @@
             <a href="transfer-station.php">Transfer Station</a>
         </li>
         <li>
-            <a href="ad-hoc.php">Ad Hoc Indicators</a>
+            <a href="ad-hoc.php">Ad Hoc Operations</a>
         </li>
         <li>
             <a href="recipe.php">Recipe Manager</a>

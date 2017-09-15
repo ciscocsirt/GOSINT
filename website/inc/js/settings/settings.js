@@ -27,11 +27,10 @@ $(document).ready(function() {
         var data = t.row(tr).data();
 
         generate("information", "Deleting feed "+data.name+".");
-        t.row(tr).remove().draw();
 
         // Get index of feed in array and remove feed
         var location = checkFeedInArray(data.name);
-        currentFeeds.splice(location);
+        currentFeeds.splice(location, 1);
 
         // Create new feeds object and POST object to endpoint
         feedsObj = new Object();
@@ -337,6 +336,7 @@ $(document).on("click", "#createFeed", function(){
  * Post-Condition: Update page with loaded information
  */
 function getFeeds() {
+  $( "#feedsTable" ).hide();
   t = $('#feedsTable').DataTable( {
 
       // Initialize AJAX pull
@@ -394,6 +394,7 @@ function getFeeds() {
       ],
       "processing": true
   });
+  $( "#feedsTable" ).fadeIn(750);
 }
 
 
