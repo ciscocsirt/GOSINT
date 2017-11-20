@@ -93,8 +93,8 @@ Currently, GOSINT supports export into CSV and `CRITs <https://crits.github.io/>
 
 To select an indicator for export, simply click the appropriate indicator.
 
-Exporting via CSV
-^^^^^^^^^^^^^^^^^
+Exporting via CRITs
+^^^^^^^^^^^^^^^^^^^
 
 CRITs is a well-known open-source malware and threat repository. You can download CRITs from https://crits.github.io/
 
