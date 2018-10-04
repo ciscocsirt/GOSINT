@@ -40,6 +40,8 @@ Warnings
 - **Package managers may name packages differently depending on the specific package manager or OS release repository.**
 
   For example, `php-fpm` may not exist; `php7.0-fpm` may be the correct name of the package
+  
+  - **You must set up a time synchronization source on the host for the Twitter API OAuth to work correctly.**
 
 Pre-Requisites
 ^^^^^^^^^^^^^^
