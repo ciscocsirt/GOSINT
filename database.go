@@ -13,25 +13,36 @@ import (
 
 // InsertRaw is used for inserting new indicators in the pre-processing MongoDB collection.
 func InsertRaw() {
-	sessionClone := Sessions.Clone()
-	defer sessionClone.Close()
-
-	//Set timeout high to work with the growth of the historic collection.
-	sessionClone.SetSocketTimeout(1 * time.Hour)
 
 	for {
-Loop:
 		select {
 		case v := <-InsertionQueue:
+
+			InsertDatabase(v)
+		}
+	}
+}
+
+
+func InsertDatabase(v RawIndicators) {
+
+
+			sessionClone := Sessions.Clone()
+			defer sessionClone.Close()
+
+			//Set timeout high to work with the growth of the historic collection.
+			sessionClone.SetSocketTimeout(1 * time.Hour)
+
 			h := sessionClone.DB("test").C("historic")
 			count, err := h.Find(bson.M{"indicator": v.Indicator}).Count()
 			if err != nil {
+				log.Println(err)
 				FatalError(err)
 			}
 			// If indicator does exist in historic collection, skip inserting in DB.
 			if count > 0 {
 				//log.Printf("Indicator %v has already been seen.\n", v.Indicator)
-				break Loop
+				return
 			}
 
 			// Check to see if domain matches Alexa domain or contains invalid characters.
@@ -41,10 +52,10 @@ Loop:
 				for _, top := range Config.AlexaDomains {
 					if strings.EqualFold(domain, top) {
 						log.Printf("Indicator %v found in Alexa top 10,000 domains", domain)
-						break Loop
+						return
 					} else if strings.ContainsAny(domain, "',`()*^&%$#@!") {
 						log.Printf("Indicator %v contains invalid characters, dropping indicator.\n", domain)
-						break Loop
+						return
 					} else {
 						continue
 					}
@@ -55,10 +66,10 @@ Loop:
 				for _, test := range Config.WhiteListDomains {
 					if strings.Contains(url, test+"/") {
 						log.Printf("Indicator %v found in Alexa top 10,000 domains", url)
-						break Loop
+						return
 					} else if strings.ContainsAny(url, "',`") {
 						log.Println("Indicator %v contains invalid characters, dropping indicator.", url)
-						break Loop
+						return
 					} else {
 						continue
 					}
@@ -77,7 +88,7 @@ Loop:
 
 				if err != nil {
 					log.Println("Error doing reverse lookup on %v: %v", *ip, err)
-					break Loop
+					return
 				}
 
 				*context = *context + "| ASN: " + resp.ASN.String() + " ISP: " + resp.Name.Raw
@@ -88,12 +99,12 @@ Loop:
 					isp := strings.ToLower(resp.Name.Raw)
 					if strings.Contains(isp, whitelistisp) {
 						log.Printf("Whitelisted ISP found, ignorring %v\n", *ip)
-						break Loop
+						return
 					}
 				}
 
 			default:
-				break Loop
+				return
 			}
 
 			// Insert raw indicator document into historic.
@@ -109,9 +120,6 @@ Loop:
 			if err != nil {
 				log.Println(err)
 			}
-			//sessionClone.Close()
+			sessionClone.Refresh()
 			time.Sleep(3)
-		}
-	}
 }
-
