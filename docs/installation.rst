@@ -41,7 +41,7 @@ Warnings
 
   For example, `php-fpm` may not exist; `php7.0-fpm` may be the correct name of the package
   
-  - **You must set up a time synchronization source on the host for the Twitter API OAuth to work correctly.**
+- **You must set up a time synchronization source on the host for the Twitter API OAuth to work correctly.**
 
 Pre-Requisites
 ^^^^^^^^^^^^^^
