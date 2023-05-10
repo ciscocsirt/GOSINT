@@ -64,7 +64,7 @@
       <!-- Inner chart div end -->
 
   </div>
-  <<!-- Inner chart column end -->
+  <!-- Inner chart column end -->
 
 </div>
 <!-- Display charts end -->
